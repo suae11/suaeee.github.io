@@ -1,0 +1,410 @@
+
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+:root {
+    --main-color: #4e878c;
+    --dark-main: #F57F5B;
+    --black: #Faca78;
+    --bg: #00241B;
+}
+
+/* Overall design */
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.2s linear;
+    text-decoration: none;
+}
+
+html {
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes at least the height of the viewport */
+    margin-top: 90px; /* Matches the height of the header */
+    padding-bottom: 100px; /* Adds space for the footer */
+    background: linear-gradient(30deg, #68c7c1, #4e878c);
+    background-color: #4e878c;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Header design */
+header {
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--dark-main); /* Added line below header */
+}
+
+header .logo img {
+    height: 75px;
+    margin-left: 15px;
+}
+
+header .navbar {
+    display: flex;
+    gap: 15px;
+}
+
+header .navbar a.active {
+    color: #DD5341;
+    background: var(--main-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+header .navbar a:hover, 
+header .navbar a.active {
+    color: floralwhite;
+    border-bottom: 2px solid floralwhite;
+}
+
+header .check-btn {
+    font-size: 30px;
+    color: black;
+    display: none;
+    cursor: pointer;
+}
+
+header .check-btn:hover {
+    color: floralwhite;
+}
+
+#check {
+    display: none;
+}
+
+header .search-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header .search-form input {
+    height: 50px;
+    width: 80%;
+    font-size: 1.6rem;
+    color: var(--black);
+    background: whitesmoke;
+    border-radius: 25px;
+    border: 1px solid var(--main-color);
+    padding: 0.5rem 1rem;
+}
+
+header .search-form input:focus {
+    outline: none;
+}
+
+/* CONTENT START */
+.content {
+    width: 95%;
+    margin-left: 3%;
+    margin-top: 150px;
+}
+
+/* Menu Section */
+.menu {
+    padding-top: 70px;
+}
+
+.menu h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--black);
+}
+
+.menu .category-text h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--black);
+}
+
+.menu .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Menu Item (Card) Styling */
+.menu-box {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+
+.menu-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.menu-context {
+    padding: 1rem;
+}
+
+.menu-context h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.menu-context p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Global button style */
+button {
+    background-color: var(--main-color); /* Red background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--dark-main); /* Darker red on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Button style for cards specifically */
+.card .menu-context button {
+    background-color: var(--main-color); /* Red background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card .menu-context button:hover {
+    background-color: var(--dark-main); /* Darker red on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Media Queries for Responsive Layout */
+@media (max-width: 768px) {
+    .menu .container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Smaller columns on smaller screens */
+    }
+
+    .menu .container .menu-box {
+        max-width: 100%;
+    }
+
+    .menu .container .menu-box img {
+        width: 100%;
+        margin-top: 15px; /* Reduce margin on smaller screens */
+    }
+}
+
+@media (max-width: 1020px) {
+    header .navbar {
+        display: none;
+    }
+
+    header .check-btn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--dark-main);
+        top: 90px;
+        left: -100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        font-size: 45px;
+        color: floralwhite;
+        font-weight: bold;
+        line-height: 120px;
+    }
+
+    .header .search-form {
+        margin-left: 240px;
+    }
+
+    header .search-form input {
+        height: 50px;
+        width: 340px;
+        font-size: 1.6rem;
+        color: var(--black);
+        text-transform: none;
+        background: whitesmoke;
+        border-radius: 50px;
+        border-color: var(--main-color);
+        margin-right: 17px;
+        padding: 10px;
+    }
+
+    .check-btn:checked + .navbar {
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: var(--dark-main);
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        transition: all 3s;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 0 auto;
+        font-size: 2rem;
+        color: floralwhite;
+    }
+}
+
+/* Footer Styling */
+.footer {
+    background: #C68859;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    margin-top: auto; /* Ensures the footer stays at the bottom */
+    width: 100%;
+}
+
+.footer-box {
+    flex: 1;
+    margin: 0 20px;
+    min-width: 200px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    color: #FACA78;
+    margin-bottom: 10px;
+}
+
+.footer p, .footer a {
+    font-size: 14px;
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer form {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer input[type="email"] {
+    padding: 5px;
+    flex: 1;
+    border: none;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+}
+
+.footer button {
+    padding: 5px 10px;
+    background: #f0a500;
+    color: #fff;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.footer button:hover {
+    background: #555;
+}
+
+.footer-box a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-box a i {
+    font-size: 1.2rem;
+    color: #f0a500;
+}
+
+.footer-box a:hover i {
+    color: #fff;
+}
+
+/* Center Quick Links */
+.footer .footer-box:nth-child(2) {
+    text-align: center;
+}
+
+.footer .footer-box:nth-child(1),
+.footer .footer-box:nth-child(3) {
+    text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-box {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer .footer-box:nth-child(1) {
+        order: 1;
+    }
+
+    .footer .footer-box:nth-child(2) {
+        order: 2;
+    }
+
+    .footer .footer-box:nth-child(3) {
+        order: 3;
+    }
+}

@@ -1,0 +1,513 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+:root {
+    --main-color: #4e878c;
+    --dark-main: #F57F5B;
+    --black: #FACA78;
+    --bg: #00241B;
+}
+
+/* Overall design */
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.2s linear;
+    text-decoration: none;
+}
+
+html {
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin-top: 90px; /* Matches the height of the header */
+    background: linear-gradient(30deg, #68c7c1, #4e878c);
+    background-color: #4e878c;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything horizontally */
+    justify-content: flex-start; /* Align items to the start vertically */
+    padding: 20px;
+}
+
+/* Centering logo and slogan */
+.slogan-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height to center vertically */
+    background-color: var(--bg); /* Background color same as header */
+    color: white;
+    text-align: center;
+}
+
+.slogan-content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.slogan-content p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Header Design */
+header { 
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--dark-main); /* Added line below header */
+}
+
+header .logo img {
+    height: 75px;
+    margin-left: 15px;
+}
+
+header .navbar {
+    display: flex;
+    gap: 15px;
+}
+
+header .navbar a.active {
+    color: #fff;
+    background: var(--main-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+header .navbar a:hover, 
+header .navbar a.active {
+    color: floralwhite;
+    border-bottom: 2px solid floralwhite;
+}
+
+header .check-btn {
+    font-size: 30px;
+    color: black;
+    display: none;
+    cursor: pointer;
+}
+
+header .check-btn:hover {
+    color: floralwhite;
+}
+
+#check {
+    display: none;
+}
+
+header .search-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header .search-form input {
+    height: 50px;
+    width: 80%;
+    font-size: 1.6rem;
+    color: var(--black);
+    background: whitesmoke;
+    border-radius: 25px;
+    border: 1px solid var(--main-color);
+    padding: 0.5rem 1rem;
+}
+
+header .search-form input:focus {
+    outline: none;
+}
+
+/* Responsive Menu */
+@media (max-width: 1020px) {
+    header .navbar {
+        display: none;
+    }
+
+    header .check-btn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--dark-main);
+        top: 90px;
+        left: -100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        font-size: 45px;
+        color: floralwhite;
+        font-weight: bold;
+        line-height: 120px;
+    }
+
+    .header .icons div {
+        cursor: pointer;
+        padding-right: 12px;
+        color: var(--black);
+        font-size: 32px;
+        border: none;
+        display: inline-block;
+    }
+
+    .header .icons div:hover {
+        color: floralwhite;
+        transition: 0.35s;
+    }
+
+    .header .search-form {
+        margin-left: 240px;
+    }
+
+    header .search-form input {
+        height: 50px;
+        width: 340px;
+        font-size: 1.6rem;
+        color: var(--black);
+        text-transform: none;
+        background: whitesmoke;
+        border-radius: 50px;
+        border-color: var(--main-color);
+        margin-right: 17px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 1020px) {
+    header .search-form input {
+        height: 40px;
+        width: 300px;
+    }
+
+    .check-btn:checked + .navbar {
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: var(--dark-main);
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        transition: all 3s;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 0 auto;
+        font-size: 2rem;
+        color: floralwhite;
+    }
+}
+
+/* About Section - Centering content */
+.about {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    flex-direction: column; /* Makes the content stack vertically */
+    padding: 2rem 3%;
+    text-align: center;
+}
+
+.about-image {
+    max-width: 400px;
+    margin: 1rem 0;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-content {
+    max-width: 600px;
+    padding: 1rem;
+}
+
+.about-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #000;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+}
+
+.about-content .buy-now:hover {
+    background-color: var(--dark-main);
+}
+
+/* Team Section */
+.team .card-img img {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-img img {
+    width: 100%;
+    height: auto;
+}
+
+.team-info {
+    padding: 20px;
+}
+
+.card-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.card-role {
+    font-size: 18px;
+    color: gray;
+}
+
+.card-email {
+    font-size: 16px;
+    color: #555;
+}
+
+.button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+.footer {
+    background: #C68859;
+    color: #fff;
+    padding: 100px 100px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.footer-box {
+    flex: 1;
+    margin: 0 200px;
+    min-width: 200px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    color: #FACA78;
+    margin-bottom: 10px;
+}
+
+.footer p, .footer a {
+    font-size: 14px;
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer form {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer input[type="email"] {
+    padding: 5px;
+    flex: 1;
+    border: none;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+}
+
+.footer button {
+    padding: 5px 10px;
+    background: #f0a500;
+    color: #fff;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.footer button:hover {
+    background: #555;
+}
+
+.footer-box a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-box a i {
+    font-size: 1.2rem;
+    color: #f0a500;
+}
+
+.footer-box a:hover i {
+    color: #fff;
+}
+
+.center-container {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 15px; 
+    padding: 20px;
+    text-align: left; 
+}
+
+.center-container img {
+    height: 200px; 
+    width: auto; 
+}
+
+.center-container p {
+    font-size: 1.2rem; 
+    color: #333; 
+    margin: 0;
+}
+
+/* Team Section */
+.team {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.team h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: center; /* Center the cards */
+    gap: 40px; /* Space between cards */
+    flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.card {
+    width: 300px; /* Adjust the width of each card */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular image */
+    margin-top: 20px;
+}
+
+.team-info {
+    padding: 15px;
+}
+
+.card-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+.card-role {
+    font-size: 1rem;
+    color: gray;
+}
+
+.card-email {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}

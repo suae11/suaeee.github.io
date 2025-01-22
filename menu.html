@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale-1">
+<title>Menu</title>
+<link rel="icon" type="image/x-icon" href="logo icon.jpg">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<!-- css file -->
+<link rel="stylesheet" type="text/css" href="menu.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+<!-- header start -->
+<header>
+	<div class="logo">
+		<img src="logo icon.jpg" alt="Logo">
+	</div>
+	<nav>
+		<input type="checkbox" id="check">
+		<label for="check" class="check-btn">&#9776;</label>
+		<ul class="navbar">
+			<li><a href="home.html" class="active">Home</a></li>
+			<li><a href="index.html"class="active">About</a></li>
+			<li><a href="menu.html"class="active">Menu</a></li>
+		</ul>
+	</nav>
+	<div class="search-form">
+		<input type="text" placeholder="Search...">
+		<label for="search">&#128269;</label>
+	</div>
+	<!-- Fixed Cart Button -->
+	<div class="cart-icon">
+		<a href="cart.html" title="Shop Cart">🛒</a>
+	</div>
+</header>
+ <!-- header end -->
+
+ <!-- Menu Section -->
+<section class="menu" id="menu">
+    <h1 class="heading">OUR<span>MENU</span></h1>
+    <p class="heading-description"></p>
+
+    <div class="category-text"><h3>Sofa Selection</h3></div>
+
+    <div class="container menu-section">
+        <!-- product 1 -->
+        <div class="card menu-box">
+            <div class="menu-img">
+                <img src="sofa 1 seater.png" alt="Sofa 1 Seater">
+            </div>
+            <div class="menu-context">
+                <h3>Sofa 1 Seater</h3>
+                <p>A 1-seater sofa, also known as an armchair or single chair, is perfect for smaller spaces, such as cozy corners or personal nooks. It provides an intimate, comfortable seating option, ideal for one person to relax or read. It's highly versatile and easy to move, making it a great choice for apartments or smaller living rooms.</p>
+                <div onclick="addToCart('Sofa 1 Seater(Brown)', 'P4,999.00', 'Products/No BG/sofa 1 seater', 'itemi-s'); return  false;">
+                    <button id="item1-s">Brown <span>P4,999.00</span></button> <!-- SMALL -->
+                </div>
+                <div onclick="addToCart('Sofa 1 Seater(Black)', 'P4,999.00', 'Products/No BG/sofa 1 seater.jpg', 'item-m'); return false;">
+                    <button id="itemi-m">Black <span>P4,999.00</span></button> <!-- MEDIUM-->
+                </div>
+                <div onclick="addToCart('Sofa 1 Seater(Pink)', 'P5,999.00', 'sofa 1 seater.jpg', 'itemi-1'); return false;">
+                    <button id="itemi-1">Pink <span>P5,999.00</span></button> <!-- LARGE -->
+                </div>
+            </div>
+        </div>
+
+        <!-- product 2 -->
+        <div class="card menu-box">
+            <div class="menu-img">
+                <img src="sofa 2 seater.png" alt="Sofa 2 Seater">
+            </div>
+            <div class="menu-content">
+                <h3>Sofa 2 Seater</h3>
+                <p>A 2-seater sofa strikes a balance between space efficiency and comfort, offering seating for two people. It's ideal for small to medium-sized living rooms and works well in tighter areas where a larger sofa might overwhelm the space. It’s also perfect for couples, offering ample room to sit comfortably without taking up too much room.</p>
+                <div onclick="addToCart('Sofa 2 Seater (Grey), P8,999.00', 'Products/No BG/sofa 2 seater.png', 'item2-s'); return false;">
+                    <button id="item2-s">Grey <span>P8,999.00</span></button>
+                </div>
+                <div onclick="addToCart('Sofa 2 Seater (Black)', 'P8,999.00', 'Products/No BG/sofa 2 seater.png', 'item2-m'); return false;">
+                    <button id="item2-m">Black <span>P8,999.00</span></button>
+                </div>
+                <div onclick="addToCart('Sofa 2 Seater (White)', 'P8,999.00', 'Products/No BG/sofa 2 seater.png', 'item2-1'); return false;">
+                    <button id="item2-1">White <span>P8,999.00</span></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- product 3 -->
+        <div class="card menu-box">
+            <div class="menu-img">
+                <img src="Sofa 3 Seater.png" alt="Sofa 3 seater">
+            </div>
+            <div class="menu-content">
+                <h3>Sofa 3 Seater</h3>
+                <p>A 3-seater sofa offers generous seating for three people, making it great for larger families or those who love to entertain guests. It provides ample space for lounging and is typically more spacious and plush than smaller sofas. This size also works well as the focal point in a living room, offering comfort and a more relaxed, spacious feel.</p>
+                <div onclick="addToCart('Sofa 3 Seater(Grey)', 'P15,999.00', 'Products/No BG/sofa 3 seater.png', 'item2-s'); return false;">
+                    <button id="item2-s">Grey <span>P15,999.00</span></button>
+                </div>
+                <div onclick="addToCart('Sofa 3 Seater(Black)', 'P15,999.00', 'Products/No BG/sofa 3 seater.png', 'item2-m'); return false;">
+                    <button id="item2-m">Black <span>P15,999</span></button>
+                </div>
+                <div onclick="addToCart('Sofa 3 Seater(White)', 'P16,999.00', 'Products/No BG/sofa 3 seater.png', 'item2-1'); return false;">
+                    <button id="item2-1">White <span>P16,999.00</span></button>
+                </div>
+            </div>
+        </div><br><br><br><br><br>
+
+        <!-- Add more menu items here with the same structure -->
+    </div>
+</section><br><br><br><br>
+
+<footer class="footer">hah
+    <div class="footer-box">
+        <h3>About Us</h3>
+        <p>We are committed to providing the best service possible.</p>
+    </div>
+    <div class="footer-box">
+        <h3>Quick Links</h3>
+        <a href="HOME.html">Home</a><br>
+        <a href="ABOUT.html">About</a><br>
+        <a href="MENU.html">Menu</a><br>
+    </div>
+    <div class="footer-box">
+        <h3>For more questions</h3>
+        <form>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Email here</button>
+        </form>
+    </div>
+</footer>
+
+</body>
+</html>
